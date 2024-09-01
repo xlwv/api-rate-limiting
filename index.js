@@ -3,7 +3,9 @@ import { RateLimiterRedis } from 'rate-limiter-flexible';
 import Redis from 'ioredis';
 import fs from 'fs';
 import Queue from 'bull';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const app = express();
 app.use(express.json());
 
@@ -30,7 +32,7 @@ const minuteLimiter = new RateLimiterRedis({
 });
 
 
-const taskQueue = new Queue('taskQueue', { redis: { host: '127.0.0.1', port: 6379 } });
+const taskQueue = new Queue('taskQueue', { redis: { host: process.env.REDIS_HOST, port: process.env.REDIS_PORT} });
 
 // Task function
 async function task(user_id) {
