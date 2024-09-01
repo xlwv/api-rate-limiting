@@ -5,7 +5,12 @@ make sure that u have installed all these dependencies
     "pm2": "^5.4.2",
     "rate-limiter-flexible": "^5.0.3",
     "redis": "^4.7.0"
-  }\n
+  }
+
+
+
+
+  
   Then run index.js file 
   To run enter :
   pm2 start index.js -i 2
