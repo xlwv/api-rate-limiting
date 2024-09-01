@@ -27,7 +27,7 @@ const rateLimiter = new RateLimiterRedis({
 const minuteLimiter = new RateLimiterRedis({
   storeClient: redisClient,
   keyPrefix: 'minuteLimiter',
-  points: 3, // Number of points
+  points: 20, // Number of points
   duration: 60, // Per minute
 });
 
